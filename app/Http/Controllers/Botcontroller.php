@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 class Botcontroller extends Controller
 {
 
-    // use  HandleText,HandleSession;
+    use  HandleText,HandleSession;
     public $user_message_original;
     public $user_message_lowered;
     public $button_id;
@@ -25,17 +25,17 @@ class Botcontroller extends Controller
 
     public function __construct(Request $request)
     {
-        // $this->username =$request['entry'][0]['changes'][0]["value"]['contacts'][0]['profile']['name'] ?? "there";
-        // $this->userphone =$request['entry'][0]['changes'][0]["value"]['contacts'][0]['wa_id'];
+        $this->username =$request['entry'][0]['changes'][0]["value"]['contacts'][0]['profile']['name'] ?? "there";
+        $this->userphone =$request['entry'][0]['changes'][0]["value"]['contacts'][0]['wa_id'];
 
 
-        // if(isset($request['entry'][0]['changes'][0]["value"]['messages'][0]['text']))
-        // {
-        //     $this->user_message_original = $request['entry'][0]['changes'][0]["value"]['messages'][0]['text']['body'];
-        //     $this->user_message_lowered  = strtolower($this->user_message_original);
-        //     $this->message_type = "text";
+        if(isset($request['entry'][0]['changes'][0]["value"]['messages'][0]['text']))
+        {
+            $this->user_message_original = $request['entry'][0]['changes'][0]["value"]['messages'][0]['text']['body'];
+            $this->user_message_lowered  = strtolower($this->user_message_original);
+            $this->message_type = "text";
         
-        // }
+        }
         // if(isset($request['entry'][0]['changes'][0]["value"]['messages'][0]['order']))
         // {
         //     $this->wa_cart = $request['entry'][0]['changes'][0]["value"]['messages'][0]['order']['product_items'];
@@ -72,9 +72,9 @@ class Botcontroller extends Controller
         // }
        
 
-        $data = json_encode($request->all());
-        Storage::disk('public')->put("public/".time().".json",$data);
-        die;
+        // $data = json_encode($request->all());
+        // Storage::disk('public')->put("public/".time().".json",$data);
+        // die;
         
     }
 

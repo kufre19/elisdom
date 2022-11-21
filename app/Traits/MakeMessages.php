@@ -69,8 +69,9 @@ trait MakeMessages
             "type" => "template",
             "template" => [
                 "name" => $template_name,
-                "language" => [
-                    "code" => "language-and-locale-code"
+                "language"=> [
+                    "code"=> "en_US",
+                    "policy"=> "deterministic"
                 ],
                 "components" => [
                     [
