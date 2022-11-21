@@ -23,7 +23,7 @@ class UltraController extends Controller
         $status = $parcel['status_label'];
         $status = "Statusi juaj aktual i parcelës është :{$status}";
         $notes ="shënim: ". $parcel['notes'];
-        $description ="Tracking link: ". "https://u-cep.com/tracking?barcode=".$parcel['barcode'];
+        $description ="Lidhja e ndjekjes: ". "https://u-cep.com/tracking?barcode=".$parcel['barcode'];
 
         $parameters = [
                 [

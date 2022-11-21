@@ -70,7 +70,7 @@ trait MakeMessages
             "template" => [
                 "name" => $template_name,
                 "language"=> [
-                    "code"=> "en_US",
+                    "code"=> "sq_AL",
                     "policy"=> "deterministic"
                 ],
                 "components" => [
